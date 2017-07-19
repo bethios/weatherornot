@@ -1,9 +1,22 @@
 (function() {
     function HomeCtrl($scope, $http, $q) {
+        this.getDayOfTheWeek = function(timestamp){
+            var daysOfTheWeek = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+            
+        }
+        
+        function showCurrentCity(latitude, longitude){
+            $http.get('http://nominatim.openstreetmap.org/reverse?format=json&lat=' + latitude + '&lon=' + longitude + '&zoom=18&addressdetails=1').then(function(response){
+                $scope.currentCity = response.data.address.city
+            })
+        }
+        
         function showLocationWeather(position) {
             var latitude = position.coords.latitude;
             var longitude = position.coords.longitude;
             retrieveWeather(latitude, longitude);
+            showCurrentCity(latitude, longitude)
+
         }
 
         function errorHandler(err) {
@@ -14,6 +27,9 @@
             else if( err.code == 2) {
                 alert("Error: Position is unavailable! Showing weather for Rocketmiles HQ.");
             }
+            var latitude = 41.885826;
+            var longitude = -87.644428;
+            retrieveWeather(latitude, longitude);
         }
 
         this.getLocation = function(){
@@ -25,6 +41,7 @@
                 var latitude = 41.885826;
                 var longitude = -87.644428;
                 retrieveWeather(latitude, longitude);
+                showCurrentCity(latitude, longitude)
             }
         };
 

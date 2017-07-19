@@ -1,18 +1,20 @@
 <div class="main-layer" ng-init="home.getLocation()">
-    <div id="mapholder"></div>
+    <div class='sr-only'>background image of thailand, a red boat on a pier on blue water. mountains in the background, blue sky.</div>
 
-    <h1>Your Local Forecast</h1>
+    <h1>{{ currentCity | lowercase }} forecast</h1>
     <table>
         <tr>
+            <th>day</th>
             <th></th>
-            <th>Low</th>
-            <th>High</th>
-            <th>Today's Weather</th>
+            <th>low</th>
+            <th>high</th>
+            <th>weather</th>
         </tr>
         <tr  ng-repeat="day in weather">
-            <td><img src="http://openweathermap.org/img/w/{{day.weather[0].icon}}.png" class="weather-icon" alt="{{day.weather[0].main}}"></td>
-            <td>{{ day.temp.min }}°F</td>
-            <td>{{ day.temp.max }}°F</td>
+            <td></td>
+            <td><img src="http://openweathermap.org/img/w/{{day.weather[0].icon}}.png" class="weather-icon" alt="{{day.weather[0].main}} weather icon"></td>
+            <td>{{ day.temp.min | number: 0 }}°F</td>
+            <td>{{ day.temp.max | number: 0 }}°F</td>
             <td>{{ day.weather[0].description }}</td>
         </tr>
     </table>
