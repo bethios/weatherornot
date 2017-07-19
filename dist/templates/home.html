@@ -1,0 +1,19 @@
+<div class="main-layer" ng-init="home.getLocation()">
+    <div id="mapholder"></div>
+
+    <h1>Your Local Forecast</h1>
+    <table>
+        <tr>
+            <th></th>
+            <th>Low</th>
+            <th>High</th>
+            <th>Today's Weather</th>
+        </tr>
+        <tr  ng-repeat="day in weather">
+            <td><img src="http://openweathermap.org/img/w/{{day.weather[0].icon}}.png" class="weather-icon" alt="{{day.weather[0].main}}"></td>
+            <td>{{ day.temp.min }}°F</td>
+            <td>{{ day.temp.max }}°F</td>
+            <td>{{ day.weather[0].description }}</td>
+        </tr>
+    </table>
+</div>

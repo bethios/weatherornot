@@ -1,0 +1,57 @@
+body{
+    height: 100vh;
+    background-image: url("../../assets/images/thailand.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+}
+
+.main-layer{
+    padding: 30px;
+    text-align: center;
+    background-color: rgba(255,255,255, 0.9);
+    display: inline-block;
+    border: 5px rgba(255,255,255, 0.9) solid;
+    width: 100%;
+    margin-top: 10vh;
+}
+
+h1{
+    padding-bottom: 15px;
+    font-size: 2.25em;
+}
+
+table{
+    width: 100%;
+    font-size: 1.75em;
+}
+
+th{
+    text-align: center;
+    border-bottom: 1px navy solid;
+    margin-bottom: 20px;
+}
+
+tr{
+    padding: 10px 20px;
+}
+
+td{
+    padding: 10px 20px;
+}
+
+@media (min-width: 1024px) {
+    .main-layer {
+        top: 50px;
+        right: 50px;
+        position: absolute;
+        width: auto;
+    }
+
+    table{
+        width: auto;
+    }
+
+}
