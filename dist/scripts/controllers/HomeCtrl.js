@@ -11,7 +11,7 @@
                 $scope.currentCity = response.data.address.city
             })
         }
-        
+
         function showLocationWeather(position) {
             var latitude = position.coords.latitude;
             var longitude = position.coords.longitude;
@@ -30,6 +30,7 @@
             var latitude = 41.885826;
             var longitude = -87.644428;
             retrieveWeather(latitude, longitude);
+            showCurrentCity(latitude, longitude)
         }
 
         this.getLocation = function(){
@@ -38,11 +39,11 @@
                 navigator.geolocation.getCurrentPosition(showLocationWeather, errorHandler, options);
             } else{
                 alert("Sorry, browser does not support geolocation! Showing weather for Rocketmiles HQ.");
-                var latitude = 41.885826;
-                var longitude = -87.644428;
-                retrieveWeather(latitude, longitude);
-                showCurrentCity(latitude, longitude)
             }
+            var latitude = 41.885826;
+            var longitude = -87.644428;
+            retrieveWeather(latitude, longitude)
+            showCurrentCity(latitude, longitude)
         };
 
         function retrieveWeather(latitude, longitude) {
@@ -54,7 +55,7 @@
                 }
             );
         }
-    }
+        }
 
     angular
         .module('weather')
