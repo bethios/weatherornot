@@ -2,7 +2,8 @@
     function HomeCtrl($scope, $http, $q) {
         this.getDayOfTheWeek = function(timestamp){
             var daysOfTheWeek = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
-            
+            var date = new Date(timestamp * 1000);
+            return daysOfTheWeek[date.getDay()]
         }
         
         function showCurrentCity(latitude, longitude){
@@ -16,7 +17,6 @@
             var longitude = position.coords.longitude;
             retrieveWeather(latitude, longitude);
             showCurrentCity(latitude, longitude)
-
         }
 
         function errorHandler(err) {

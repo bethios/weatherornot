@@ -1,21 +1,21 @@
 body{
-    height: 100vh;
+    min-height: 100vh;
     background-image: url("../../assets/images/thailand.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
+    text-align: center;
 }
 
 .main-layer{
     padding: 30px;
     text-align: center;
     background-color: rgba(255,255,255, 0.9);
-    display: inline-block;
+    display: block;
     border: 5px rgba(255,255,255, 0.9) solid;
     width: 100%;
-    margin-top: 10vh;
 }
 
 h1{
@@ -26,6 +26,7 @@ h1{
 table{
     width: 100%;
     font-size: 1.75em;
+    height: auto;
 }
 
 th{
@@ -43,15 +44,10 @@ td{
 }
 
 @media (min-width: 1024px) {
-    .main-layer {
-        top: 50px;
-        right: 50px;
-        position: absolute;
-        width: auto;
-    }
-
-    table{
-        width: auto;
+    .main-layer{
+        width: 85%;
+        margin: 10vh auto;
+        
     }
 
 }
