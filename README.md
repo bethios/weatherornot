@@ -1,5 +1,10 @@
 ## Weather app
-
+- uses geolocation to request location access. 
+- parses location info to get longitude and latitude.
+- pulls five day weather forecast based on user location via Open Weather API.
+- pulls city name using nominatim API. 
+- parses day of the week from unix timestamp. 
+- accessibility features include sr-only div's for background image, alt text for icons
 
 ## Configuration
 
